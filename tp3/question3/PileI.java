@@ -4,7 +4,6 @@ import question1.PilePleineException;
 import question1.PileVideException;
 
 public interface PileI<T> {
-
     public final static int CAPACITE_PAR_DEFAUT = 6;
 
     public void empiler(T o) throws PilePleineException;
@@ -18,5 +17,4 @@ public interface PileI<T> {
     public boolean equals(Object o);
     public int hashCode();
     public String toString();
-
 }

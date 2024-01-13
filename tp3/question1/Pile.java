@@ -10,9 +10,9 @@ import question1.PileVideException;
  * @version (un numéro de version ou une date)
  */
 public class Pile {
-    public final static int TAILLE_PAR_DEFAUT = 5;
+    public final static int CAPACITE_PAR_DEFAUT = 5;
 
-    private int[] zone;
+    private Object[] zone;
     private int ptr;
 
     /**
@@ -21,25 +21,25 @@ public class Pile {
      */
     public Pile(int taille) {
         if (taille < 0)
-            taille = TAILLE_PAR_DEFAUT;
-        this.zone = new int[taille];
+            taille = CAPACITE_PAR_DEFAUT;
+        this.zone = new Object[taille];
         this.ptr = 0;
     }
 
     public Pile() {
-        this(TAILLE_PAR_DEFAUT);
+        this(CAPACITE_PAR_DEFAUT);
     }
 
-    public void empiler(int i) throws PilePleineException {
+    public void empiler(Object o) throws PilePleineException {
         if (estPleine())
-            throw new PilePleineException();
-        this.zone[this.ptr] = i;
+            throw new PilePleineException("Pile est pleine!");
+        this.zone[this.ptr] = o;
         this.ptr++;
     }
 
-    public int depiler() throws PileVideException {
+    public Object depiler() throws PileVideException {
         if (estVide())
-            throw new PileVideException();
+            throw new PileVideException("Pile est vide!");
         this.ptr--;
         return zone[ptr];
     }
@@ -51,11 +51,11 @@ public class Pile {
     public boolean estPleine() {
         return ptr == zone.length;
     }
-
+    
     public String toString() {
         StringBuffer sb = new StringBuffer("[");
         for (int i = ptr - 1; i >= 0; i--) {
-            sb.append(Integer.toString(zone[i]));
+            sb.append(zone[i]);
             if (i > 0)
                 sb.append(", ");
         }

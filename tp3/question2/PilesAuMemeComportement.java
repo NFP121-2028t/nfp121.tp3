@@ -20,22 +20,13 @@ public class PilesAuMemeComportement extends junit.framework.TestCase {
         p4 = new question2.Pile4(PileI.CAPACITE_PAR_DEFAUT);
     }
 
-    /**
-     * Supprime les engagements
-     *
-     * Méthode appelée après chaque appel de méthode de test.
-     */
-    protected void tearDown() // throws java.lang.Exception
-    {
-        //Libérez ici les ressources engagées par setUp()
-    }
 
     public void test_Sommaire()  throws Exception {
 
-        p4.empiler("b");p4.empiler("a");
-        p3.empiler("b");p3.empiler("a");
-        p2.empiler("b");p2.empiler("a");
-        p1.empiler("b");p1.empiler("a");
+        p4.empiler("b"); p4.empiler("a");
+        p3.empiler("b"); p3.empiler("a");
+        p2.empiler("b"); p2.empiler("a");
+        p1.empiler("b"); p1.empiler("a");
 
         assertEquals(p1.capacite(), p2.capacite());
         assertEquals(p2.capacite(), p3.capacite());
@@ -173,4 +164,3 @@ public class PilesAuMemeComportement extends junit.framework.TestCase {
 
     }
 }
-

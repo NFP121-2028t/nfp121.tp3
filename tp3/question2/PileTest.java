@@ -56,13 +56,13 @@ public class PileTest extends junit.framework.TestCase {
 
     public void test_Pile_toString() throws Exception {
         PileI pile1 = new question2.Pile(3);
-        assertEquals("toString incorrect ? ", "[]", pile1.toString());
+        assertEquals("toString incorrect (1)? ", "[]", pile1.toString());
         pile1.empiler(4);
-        assertEquals("toString incorrect ? ", "[4]", pile1.toString());
+        assertEquals("toString incorrect (2)? ", "[4]", pile1.toString());
         pile1.empiler(5);
-        assertEquals("toString incorrect ? ", "[5, 4]", pile1.toString());
+        assertEquals("toString incorrect (3)? ", "[5, 4]", pile1.toString());
         pile1.empiler(3);
-        assertEquals("toString incorrect ? ", "[3, 5, 4]", pile1.toString());
+        assertEquals("toString incorrect (4)? ", "[3, 5, 4]", pile1.toString());
 
     }
 
@@ -82,12 +82,12 @@ public class PileTest extends junit.framework.TestCase {
         p2.empiler(2);
         p2.empiler(1);
 
-        assertTrue("égalité de deux piles ? ", p1.equals(p2));
-        assertTrue("égalité de deux piles ? ", p2.equals(p1));
-        assertTrue("égalité de deux piles ? ", p1.equals(p1));
+        assertTrue("égalité de deux piles (1)? ", p1.equals(p2));
+        assertTrue("égalité de deux piles (2)? ", p2.equals(p1));
+        assertTrue("égalité de deux piles (3)? ", p1.equals(p1));
 
         p2.empiler(1);
-        assertFalse("égalité de deux piles ? ", p1.equals(p2));
+        assertFalse("égalité de deux piles (4)? ", p1.equals(p2));
 
     }
 }
